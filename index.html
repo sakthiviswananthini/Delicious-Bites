@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delicious Bites</title>
+  <meta name="description" content="Delicious Bites – fresh & fast food delivered to your door. Order pizza, biryani, wraps & more.">
+  <meta name="keywords" content="food delivery, fresh meals, pizza, biryani, wraps">
+  <meta property="og:title" content="Delicious Bites – Tasty Moments Delivered">
+  <meta property="og:description" content="Order fresh and flavorful meals with just a few clicks.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- aos library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    html
+     {
+      scroll-behavior: smooth;
+    }
+    body.light  { --bg: #fff; --fg: #333; }
+    body.dark   { --bg: #222; --fg: #eee; }
+    body {
+      padding-top: 90px;
+      background: var(--fg);
+      color: var(--bg);
+      transition: background .3s, color .3s;
+      
+    }
+    .navbar-brand span
+     {
+      font-size: 14px;
+      display: block;
+      color: #ccc;
+    }
+    .hero
+     {
+      background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      text-shadow: 1px 1px 10px black;
+      color: white;
+    }
+    .hero h1 
+    {
+      font-size: 3rem;
+    }
+    .hero button 
+    {
+      padding: 10px 20px;
+      background: white;
+      color: #398cd0;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      transition: transform .2s;
+    }
+    .hero button:hover
+     {
+      transform: scale(1.05);
+    }
+    section
+     {
+      padding: 60px 20px;
+    }
+    .menu-items 
+    {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .menu-card {
+      width: 250px;
+      background: #fff4f0;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform .3s;
+      color: black;
+    }
+    .menu-card:hover
+     {
+      transform: translateY(-5px);
+    }
+    .menu-card img
+     {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform .3s;
+    }
+    .menu-card img:hover
+     {
+      transform: scale(1.1);
+    }
+    footer
+     {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    #back-to-top, .dark-mode-toggle
+     {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+       box-shadow: 1px 1px 10px white;
+    }
+    .dark-mode-toggle 
+    {
+      top: 100px;
+      bottom: auto;
+      /* box-shadow: 1px 1px 10px black; */
+     
+    }
+    @media (max-width: 768px)
+     {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .menu-items 
+      {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body class="light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Delicious Bites <span>Tasty Moments Delivered!</span></a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <button id="darkToggle" class="dark-mode-toggle" style="color: rgb(233, 220, 220);">sub</button>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section id="home" class="hero" data-aos="fade-in">
+    <h1 data-aos="zoom-in">Fresh. Fast. Tasty.</h1>
+    <p data-aos="fade-up">Order your meal in just a few clicks</p>
+
+    <button data-aos="fade-up" data-aos-delay="200"><a href="order.html" style="text-decoration: none;">order</a></button>
+  </section>
+  <section id="about" data-aos="fade-up">
+    <div class="container">
+      <h2 class="text-center mb-4">About Us</h2>
+      <p>At Delicious Bites, food is not just something we serve — it's something we live for. Our journey began with a simple belief: that every meal should be a celebration of taste, love, and togetherness. From the very first bite, we aim to bring comfort, joy, and flavor to your plate.
+
+We specialize in crafting dishes that are rooted in tradition but sprinkled with creativity. Whether it's a timeless classic or a new twist on your favorite snack, we use only the freshest ingredients to ensure every bite is bursting with quality and flavor. Our chefs cook with heart, and it shows in every dish we serve.
+
+More than just food, we offer experiences. From cozy family dinners to festive gatherings, our menu is designed to suit every mood and moment. Each dish is a reflection of our passion for culinary excellence and our commitment to customer satisfaction.</p>
+    </div>
+  </section>
+
+  <section id="menu" data-aos="fade-up">
+    <div class="container">
+      <h2 class="text-center mb-4">Menu</h2>
+      <div class="menu-items">
+        <!-- Repeatable menu card block -->
+        <div class="menu-card">
+          <img src="shawarma.jpeg" alt="Pizza" loading="lazy">
+          <h5>Shawarma</h5>
+          <p>“Life is better when you’re savoring a delicious shawarma.”</p>
+        </div>
+         <div class="menu-card">
+          <img src="briyani.jpeg" alt="Pizza" loading="lazy">
+          <h5>Briyani</h5>
+       <p>"Biryani is a journey that starts with hunger and ends with satisfaction.”</p>
+        </div>
+         <div class="menu-card">
+          <img src="pasta.webp" alt="Pizza" loading="lazy">
+          <h5>Pasta</h5>
+        <p>“Pasta is a reminder that even the simplest things can bring the greatest joy.”</p>
+        </div>
+         <div class="menu-card">
+          <img src="tandoori.jpeg" alt="Pizza" loading="lazy">
+          <h5>Tandoori</h5>
+          <p>"Finding joy in the simplicity of spices and the complexity of flavors."</p>
+        </div>
+         <div class="menu-card">
+          <img src="piza.jpeg" alt="Pizza" loading="lazy">
+          <h5>Cheesy Pizza</h5>
+       <p>"Life is mostly pain and struggle; the rest is love and deep dish pizza.</p>
+        </div>
+         <div class="menu-card">
+          <img src="vegmeals.jpeg" alt="Pizza" loading="lazy">
+          <h5>Veg Meals</h5>
+<p>“Veganism is not a “sacrifice.” It is a joy.”</p>
+        </div>
+         <div class="menu-card">
+          <img src="nonvegmeals.jpeg" alt="Pizza" loading="lazy">
+          <h5>Non Veg Meals</h5>
+<p>"From biryani to butter chicken,
+Every bite is a burst of flavor,
+A meal that speaks louder than words."</p>
+        </div>
+         <div class="menu-card">
+          <img src="desert.jpeg" alt="Pizza" loading="lazy">
+          <h5>Dessert</h5>
+       <p> "Life is short — eat dessert first."</p>
+        </div>
+        <!-- More items -->
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-light" data-aos="fade-up">
+    <div class="container">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <form class="row g-3">
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Your Name" required />
+        </div>
+        <div class="col-md-6">
+          <input type="email" class="form-control" placeholder="Your Email" required />
+        </div>
+        <div class="col-12">
+          <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary px-4">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Delicious Bites. All rights reserved.</p>
+  </footer>
+  <button id="darkToggle" class="dark-mode-toggle" style="color: red;">sub</button>
+  <button id="back-to-top">↑</button> 
+  <script>
+    AOS.init({ once: true });
+
+    document.getElementById('darkToggle').onclick = () => {
+      document.body.classList.toggle('dark');
+      document.body.classList.toggle('light');
+    };
+
+    const up = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      up.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    });
+    up.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  </script>
+</body>
+</html>
